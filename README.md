@@ -1,290 +1,226 @@
 # Depi-Grad-Project
-Call Center Performance Analytics Dashboard
-1. Project Overview
+# Call Center Performance Analytics Dashboard
 
-This project presents an end-to-end data analytics solution designed to analyze and monitor call center performance. The system processes operational call center data and transforms it into actionable insights using a combination of analytical tools.
+## 1. **Project Overview**
 
-The analytics pipeline integrates multiple technologies including Python, SQL, Excel, Power BI, Tableau, and Scikit-learn.
+This project presents an end-to-end **Data Analytics workflow** designed to analyze and monitor **call center performance**.
 
-The final output of the system is an interactive Power BI dashboard that enables managers to evaluate service efficiency, agent performance, and customer satisfaction metrics.
+The system processes operational call center data and transforms it into meaningful insights using multiple analytical tools including **Python**, **SQL**, **Excel**, **Power BI**, **Tableau**, and **Scikit-learn**.
 
-2. Project Objective
+The final output of the project is an **interactive Power BI dashboard** that enables managers to evaluate service performance, monitor agent productivity, and analyze customer satisfaction metrics.
 
-The primary objective of this project is to build a data-driven monitoring system for call center operations.
+---
 
-The system aims to support decision making by enabling managers to:
+## 2. **Project Objective**
 
-Monitor call center performance metrics.
+The main objective of this project is to build a **data-driven performance monitoring system** for call center operations.
 
-Analyze agent productivity.
+The system allows managers to:
 
-Track customer service efficiency.
+1. Monitor **call center operational performance**
+2. Track **answered vs abandoned calls**
+3. Evaluate **agent productivity**
+4. Analyze **customer satisfaction metrics**
+5. Compare **forecasted call volumes with actual performance**
 
-Evaluate customer satisfaction indicators.
+These insights help organizations make **data-driven operational decisions**.
 
-Compare forecasted call volumes with actual performance.
+---
 
-3. System Architecture
+## 3. **Project Idea**
 
-The project follows a structured data analytics pipeline composed of several layers.
+Call centers generate large volumes of operational data such as **call logs**, **handling times**, **agent activity**, and **customer feedback**.
 
-Data Sources
-     │
-     ▼
-Data Preparation (Excel / SQL)
-     │
-     ▼
-Data Cleaning & Feature Engineering (Python)
-     │
-     ▼
-Data Modeling (Power BI)
-     │
-     ▼
-Data Visualization (Power BI / Tableau)
-     │
-     ▼
-Performance Insights
+Without proper analytics tools, extracting insights from this data becomes difficult.
 
-Additional architecture diagrams are included in the repository.
+This project builds a **data analytics pipeline** that transforms raw operational data into structured insights through **data cleaning**, **feature engineering**, and **interactive dashboards**.
 
-4. System Analysis
-4.1 Input Data
+---
 
-The system processes operational call center datasets containing the following attributes.
+## 4. **Data Analytics Workflow**
 
-Attribute	Description
-Call ID	Unique identifier for each call
-Call Date	Date of the call
-Call Time	Time interval when the call occurred
-Agent Name	Agent responsible for the call
-Team Manager	Manager supervising the agent
-Department	Department responsible for handling the call
-Call Status	Indicates whether the call was answered or abandoned
-Handling Time	Duration of the call
-Customer Satisfaction Score	Customer feedback rating
-Forecasted Calls	Predicted call volume
-Actual Calls	Actual number of calls received
-Transfers	Number of transferred calls
-4.2 Processing Components
+### 4.1 **Data Preparation**
 
-The system performs several analytical operations on the dataset.
+The dataset is prepared using **Excel** and **SQL** to:
 
-Data Preparation
+- Organize the raw dataset
+- Validate column types
+- Extract relevant records
 
-Data preparation is performed using Excel and SQL queries in order to:
+### 4.2 **Data Cleaning**
 
-Structure the dataset
+Data cleaning is performed using **Python (Pandas)** to:
 
-Filter relevant attributes
+- Handle missing values
+- Remove duplicate records
+- Convert columns to appropriate data types
+- Standardize the dataset
 
-Validate data integrity
+### 4.3 **Feature Engineering**
 
-Data Cleaning
+Using **Python** and **Scikit-learn**, additional analytical features are created such as:
 
-Python (Pandas) is used to perform data cleaning tasks including:
+- Call duration categories
+- Peak call hour indicators
+- Agent efficiency metrics
 
-Removing duplicate records
+### 4.4 **Data Modeling**
 
-Handling missing values
+The cleaned dataset is imported into **Power BI** where:
 
-Converting data types
+- Table relationships are created
+- Date and time dimensions are structured
+- Analytical measures are implemented using **DAX**
 
-Normalizing column formats
+### 4.5 **Dashboard Development**
 
-Feature Engineering
+Interactive dashboards are developed using **Power BI** and **Tableau** to visualize key performance metrics.
 
-Feature engineering is implemented using Python and Scikit-learn. Examples include:
+---
 
-Agent efficiency indicators
+## 5. **System Analysis**
 
-Call duration categories
+### 5.1 **Input Data**
 
-Peak call hour detection
+| Attribute | Description |
+|----------|-------------|
+| Call ID | Unique identifier for each call |
+| Call Date | Date of the call |
+| Call Time | Time interval when the call occurred |
+| Agent Name | Agent handling the call |
+| Team Manager | Manager supervising the agent |
+| Department | Department responsible for the call |
+| Call Status | Indicates whether the call was answered or abandoned |
+| Handling Time | Duration of the call |
+| Customer Satisfaction Score | Customer feedback rating |
+| Forecasted Calls | Predicted call volume |
+| Actual Calls | Actual call volume |
 
-Customer satisfaction classification
+---
 
-Data Modeling
+### 5.2 **System Processing**
 
-Power BI is used to create the analytical data model including:
+The system performs several processing operations including:
 
-Table relationships
+- Data cleaning and validation
+- Feature engineering
+- Aggregation of performance metrics
+- KPI calculations
+- Time-based performance analysis
 
-Time dimension tables
+---
 
-Calculated measures using DAX
+### 5.3 **System Outputs**
 
-4.3 System Outputs
+The system generates **interactive dashboards** that display:
 
-The system generates interactive dashboards that provide:
+- Key Performance Indicators (**KPIs**)
+- Call center performance trends
+- Agent productivity comparisons
+- Call distribution analysis
+- Customer satisfaction metrics
 
-Key Performance Indicators (KPIs)
+---
 
-Performance trends over time
+## 6. **Key DAX Measures**
 
-Agent productivity comparisons
+### **Total Calls**
 
-Call distribution analysis
-
-Customer satisfaction insights
-
-5. Analytical Metrics and Algorithms
-
-Several analytical metrics are calculated to evaluate call center performance.
-
-5.1 Abandonment Rate
-
-Abandonment\ Rate = \frac{Abandoned\ Calls}{Total\ Calls}
-
-This metric measures the percentage of calls that were not handled by agents.
-
-5.2 Average Handling Time (AHT)
-
-AHT = \frac{Total\ Handling\ Time}{Answered\ Calls}
-
-This metric evaluates the average time spent by agents handling customer calls.
-
-5.3 Forecast Accuracy
-
-Forecast\ Accuracy = \frac{Actual\ Calls}{Forecasted\ Calls}
-
-This metric measures the accuracy of predicted call volumes.
-
-6. Implementation Workflow
-
-The system implementation follows several structured steps.
-
-Step 1 — Data Preparation
-
-Organize and validate the dataset using Excel.
-
-Extract relevant information using SQL queries.
-
-Step 2 — Data Cleaning
-
-Handle missing data.
-
-Remove duplicates.
-
-Standardize data formats.
-
-Step 3 — Feature Engineering
-
-Using Python and Scikit-learn to generate new analytical features such as:
-
-Call duration groups
-
-Agent efficiency indicators
-
-Time-based call patterns
-
-Step 4 — Data Modeling
-
-Power BI is used to:
-
-Import processed data
-
-Create relationships between tables
-
-Build analytical measures using DAX
-
-Step 5 — Dashboard Development
-
-Interactive dashboards are developed including:
-
-KPI indicators
-
-Trend visualizations
-
-Interactive filters and slicers
-
-Drill-through analysis pages
-
-7. Key DAX Measures
-
-The Power BI dashboard includes several calculated measures.
-
-7.1 Call Volume Metrics
-
-Total Calls
-
+```DAX
 Total Calls =
 COUNT(CallCenter[CallID])
+```
 
-Answered Calls
+### **Answered Calls**
 
+```DAX
 Answered Calls =
 CALCULATE(
     COUNT(CallCenter[CallID]),
     CallCenter[CallStatus] = "Answered"
 )
+```
 
-Abandoned Calls
+### **Abandoned Calls**
 
+```DAX
 Abandoned Calls =
 CALCULATE(
     COUNT(CallCenter[CallID]),
     CallCenter[CallStatus] = "Abandoned"
 )
-7.2 Performance Metrics
+```
 
-Abandonment Rate
+### **Abandonment Rate**
 
+```DAX
 Abandonment Rate =
-DIVIDE(
-    [Abandoned Calls],
-    [Total Calls],
-    0
-)
+DIVIDE([Abandoned Calls], [Total Calls], 0)
+```
 
-Average Handling Time
+### **Average Handling Time**
 
+```DAX
 Average Handling Time =
 AVERAGE(CallCenter[HandlingTime])
-7.3 Forecast Performance
+```
 
-Forecast Accuracy
+### **Customer Satisfaction Score**
 
-Forecast Accuracy =
-DIVIDE(
-    SUM(CallCenter[ActualCalls]),
-    SUM(CallCenter[ForecastCalls]),
-    0
-)
-7.4 Customer Satisfaction
-
-CSAT Score
-
+```DAX
 CSAT Score =
 AVERAGE(CallCenter[CustomerSatisfaction])
-8. Technologies Used
-Technology	Purpose
-Power BI	Dashboard development and visualization
-Python	Data cleaning and preprocessing
-Pandas / NumPy	Data manipulation
-Scikit-learn	Feature engineering
-SQL	Data extraction and querying
-Excel	Data preparation
-Tableau	Additional visualization exploration
-10. Expected Insights
+```
 
-The analytical dashboard allows users to:
+---
 
-Identify high performing agents
+## 7. **Technologies Used**
 
-Detect call abandonment patterns
+| Technology | Purpose |
+|-----------|--------|
+| Power BI | Dashboard development and visualization |
+| Python | Data cleaning and preprocessing |
+| Pandas / NumPy | Data manipulation |
+| Scikit-learn | Feature engineering |
+| SQL | Data querying |
+| Excel | Data preparation |
+| Tableau | Additional visualization |
 
-Monitor customer satisfaction trends
+---
 
-Analyze call volume trends
+## 8. **Repository Structure**
 
-Improve workforce planning
+```
+call-center-performance-dashboard
 
-11. Future Enhancements
+data
+   raw_data.xlsx
+   processed_data.csv
 
-Potential future improvements include:
+python
+   data_cleaning.py
+   feature_engineering.py
 
-Predictive models for call volume forecasting
+sql
+   queries.sql
 
-Real-time data integration
+powerbi
+   call_center_dashboard.pbix
 
-Advanced agent performance analytics
+tableau
+   dashboard.twb
+
+README.md
+```
+
+---
+
+## 9. **Expected Insights**
+
+The dashboard helps decision makers to:
+
+- Identify **high performing agents**
+- Detect **call abandonment patterns**
+- Monitor **customer satisfaction trends**
+- Analyze **call volume trends**
+- Improve **workforce planning**
