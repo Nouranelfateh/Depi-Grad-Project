@@ -218,7 +218,8 @@ DIM_CALENDAR ||--o{ FACT_FORECAST : recorded_on
 DIM_CALENDAR ||--o{ FACT_SURVEYS : recorded_on
 ```
 ---
-## **7. Analytical Metrics**
+## **7 Algorithms**
+## **7.1 Analytical Metrics**
 
 **Abandonment Rate**  
 `Abandonment Rate = Abandoned Calls / Total Calls`  
@@ -230,7 +231,7 @@ DIM_CALENDAR ||--o{ FACT_SURVEYS : recorded_on
 `Forecast Accuracy = Actual Calls / Forecasted Calls`  
 
 ---
-## 8. **Key DAX Measures**
+## 7.2 **Key DAX Measures**
 
 ### **Total Calls**
 
@@ -282,7 +283,7 @@ AVERAGE(CallCenter[CustomerSatisfaction])
 
 ---
 
-## 10. **Repository Structure**
+## 8. **Repository Structure**
 
 ```
 call-center-performance-dashboard
@@ -309,7 +310,7 @@ README.md
 
 ---
 
-## 10. **Expected Insights**
+## 9. **Expected Insights**
 
 The dashboard helps decision makers to:
 
