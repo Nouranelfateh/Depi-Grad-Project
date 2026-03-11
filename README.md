@@ -121,8 +121,19 @@ The system generates **interactive dashboards** that display:
 - Customer satisfaction metrics
 
 ---
+## **6. Analytical Metrics**
 
-## 6. **Key DAX Measures**
+**Abandonment Rate**  
+`Abandonment Rate = Abandoned Calls / Total Calls`  
+
+**Average Handling Time (AHT)**  
+`AHT = Total Handling Time / Answered Calls`  
+
+**Forecast Accuracy**  
+`Forecast Accuracy = Actual Calls / Forecasted Calls`  
+
+---
+## 7. **Key DAX Measures**
 
 ### **Total Calls**
 
@@ -174,7 +185,7 @@ AVERAGE(CallCenter[CustomerSatisfaction])
 
 ---
 
-## 7. **Technologies Used**
+## 8. **Technologies Used**
 
 | Technology | Purpose |
 |-----------|--------|
@@ -188,7 +199,7 @@ AVERAGE(CallCenter[CustomerSatisfaction])
 
 ---
 
-## 8. **Repository Structure**
+## 9. **Repository Structure**
 
 ```
 call-center-performance-dashboard
@@ -215,7 +226,7 @@ README.md
 
 ---
 
-## 9. **Expected Insights**
+## 10. **Expected Insights**
 
 The dashboard helps decision makers to:
 
