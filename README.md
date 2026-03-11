@@ -1,86 +1,110 @@
-# Depi-Grad-Project
 # Call Center Performance Analytics Dashboard
+
+---
 
 ## 1. **Project Overview**
 
-This project presents an end-to-end **Data Analytics workflow** designed to analyze and monitor **call center performance**.
+Call centers generate large volumes of operational data, including call logs, handling times, agent activity, and customer feedback.  
 
-The system processes operational call center data and transforms it into meaningful insights using multiple analytical tools including **Python**, **SQL**, **Excel**, **Power BI**, **Tableau**, and **Scikit-learn**.
+This project transforms raw call center data into actionable insights by building a **data analytics pipeline** and an interactive **Power BI dashboard**.  
 
-The final output of the project is an **interactive Power BI dashboard** that enables managers to evaluate service performance, monitor agent productivity, and analyze customer satisfaction metrics.
+**Tools Used:**
+
+* **SQL** – Querying and extracting data  
+* **Python (Pandas, NumPy, Scikit-learn)** – Data cleaning, preprocessing, feature engineering  
+* **Excel** – Initial exploration and validation  
+* **Power BI** – Data modeling, DAX calculations, interactive dashboards  
 
 ---
 
 ## 2. **Project Objective**
 
-The main objective of this project is to build a **data-driven performance monitoring system** for call center operations.
+The main goal is to build a **data-driven performance monitoring system** for call center operations that enables stakeholders to:
 
-The system allows managers to:
-
-1. Monitor **call center operational performance**
-2. Track **answered vs abandoned calls**
-3. Evaluate **agent productivity**
-4. Analyze **customer satisfaction metrics**
-5. Compare **forecasted call volumes with actual performance**
-
-These insights help organizations make **data-driven operational decisions**.
+* Monitor **call center operational performance**  
+* Track **answered vs abandoned calls**  
+* Evaluate **agent productivity**  
+* Analyze **customer satisfaction metrics (CSAT, NPS)**  
+* Compare **forecasted vs actual call volumes**  
+* Enable **interactive exploration** of operational data  
 
 ---
 
-## 3. **Project Idea**
+## 3. **Key Stakeholders**
 
-Call centers generate large volumes of operational data such as **call logs**, **handling times**, **agent activity**, and **customer feedback**.
+The system is designed for:
 
-Without proper analytics tools, extracting insights from this data becomes difficult.
-
-This project builds a **data analytics pipeline** that transforms raw operational data into structured insights through **data cleaning**, **feature engineering**, and **interactive dashboards**.
-
----
-
-## 4. **Data Analytics Workflow**
-
-### 4.1 **Data Preparation**
-
-The dataset is prepared using **Excel** and **SQL** to:
-
-- Organize the raw dataset
-- Validate column types
-- Extract relevant records
-
-### 4.2 **Data Cleaning**
-
-Data cleaning is performed using **Python (Pandas)** to:
-
-- Handle missing values
-- Remove duplicate records
-- Convert columns to appropriate data types
-- Standardize the dataset
-
-### 4.3 **Feature Engineering**
-
-Using **Python** and **Scikit-learn**, additional analytical features are created such as:
-
-- Call duration categories
-- Peak call hour indicators
-- Agent efficiency metrics
-
-### 4.4 **Data Modeling**
-
-The cleaned dataset is imported into **Power BI** where:
-
-- Table relationships are created
-- Date and time dimensions are structured
-- Analytical measures are implemented using **DAX**
-
-### 4.5 **Dashboard Development**
-
-Interactive dashboards are developed using **Power BI** and **Tableau** to visualize key performance metrics.
+* **Call Center Managers** – Monitor operational KPIs  
+* **Operations Teams** – Track efficiency and resource allocation  
+* **Customer Experience Teams** – Analyze satisfaction trends  
+* **Business Analysts** – Generate insights and reports  
 
 ---
 
-## 5. **System Analysis**
+## 4. **Key Performance Indicators (KPIs)**
 
-### 5.1 **Input Data**
+The dashboard calculates and tracks:
+
+* **Total Calls**  
+* **Answered Calls**  
+* **Abandoned Calls**  
+* **Average Handling Time (AHT)**  
+* **Customer Satisfaction Score (CSAT)**  
+* **Net Promoter Score (NPS)**  
+* **Call Transfers**  
+* **Actual vs Forecast Performance**  
+
+---
+
+## 5. **System Architecture**
+
+The project follows a **multi-layer analytics pipeline**:
+
+```mermaid
+flowchart LR
+    A[Raw Call Center Data] --> B[SQL Queries]
+    B --> C[Excel Exploration]
+    C --> D[Python Processing]
+    D --> E[Data Cleaning]
+    D --> F[Feature Engineering]
+    D --> G[Scikit-learn Preprocessing]
+    E --> H[Processed Dataset]
+    F --> H
+    G --> H
+    H --> I[Power BI Data Model]
+    I --> J[DAX Measures & KPIs]
+    J --> K[Interactive Dashboard]
+    K --> L[Business Insights]
+```
+
+### Architecture Layers
+
+**1. Data Source Layer**
+
+* Raw call center dataset containing call records, agent data, handling time, and satisfaction metrics.
+
+**2. Data Processing Layer**
+
+* SQL for querying data
+* Excel for initial exploration
+* Python for cleaning and feature engineering
+
+**3. Analytics Layer**
+
+* Data modeling in Power BI
+* KPI calculations using DAX
+
+**4. Visualization Layer**
+
+* Interactive Power BI dashboard
+* KPI monitoring
+* Performance insights
+These visualizations allow decision makers to analyze **call center performance efficiently**.
+---
+
+## 6. **System Analysis**
+
+### 6.1 **Input Data**
 
 | Attribute | Description |
 |----------|-------------|
@@ -98,7 +122,7 @@ Interactive dashboards are developed using **Power BI** and **Tableau** to visua
 
 ---
 
-### 5.2 **System Processing**
+### 6.2 **System Processing**
 
 The system performs several processing operations including:
 
@@ -110,7 +134,7 @@ The system performs several processing operations including:
 
 ---
 
-### 5.3 **System Outputs**
+### 6.3 **System Outputs**
 
 The system generates **interactive dashboards** that display:
 
@@ -121,7 +145,80 @@ The system generates **interactive dashboards** that display:
 - Customer satisfaction metrics
 
 ---
-## **6. Analytical Metrics**
+## 6.4 **Entity Relationship Diagram(ERD)**
+
+The dataset follows a **Star Schema data model** where fact tables store transactional data and dimension tables provide descriptive attributes for analysis.
+
+```mermaid
+erDiagram
+
+FACT_CALLS {
+int Agent_ID
+date Date
+int Department_ID
+float ACW_Time
+float Hold_Time
+float Talk_Time
+float Waiting_Time
+int Call_Transferred
+}
+
+FACT_ABANDONED {
+date Date
+int Department_ID
+float Abandonment_Time
+}
+
+FACT_FORECAST {
+date Date
+int Department_ID
+int Forecast_Calls
+int Interval
+}
+
+FACT_SURVEYS {
+int Agent_ID
+date Survey_Date
+int Satisfaction_Score
+int Resolution_Score
+int Recommend_Score
+}
+
+DIM_AGENTS {
+int Agent_ID
+string Agent_Name
+string Gender
+int Department_ID
+string Team_Manager
+}
+
+DIM_DEPARTMENTS {
+int Department_ID
+string Department_Name
+}
+
+DIM_CALENDAR {
+date Date
+int Month
+int Year
+int Week
+int Quarter
+}
+
+DIM_AGENTS ||--o{ FACT_CALLS : handles
+DIM_AGENTS ||--o{ FACT_SURVEYS : receives
+
+DIM_DEPARTMENTS ||--o{ FACT_CALLS : belongs_to
+DIM_DEPARTMENTS ||--o{ FACT_ABANDONED : belongs_to
+DIM_DEPARTMENTS ||--o{ FACT_FORECAST : belongs_to
+
+DIM_CALENDAR ||--o{ FACT_CALLS : recorded_on
+DIM_CALENDAR ||--o{ FACT_ABANDONED : recorded_on
+DIM_CALENDAR ||--o{ FACT_FORECAST : recorded_on
+DIM_CALENDAR ||--o{ FACT_SURVEYS : recorded_on
+```
+---
+## **7. Analytical Metrics**
 
 **Abandonment Rate**  
 `Abandonment Rate = Abandoned Calls / Total Calls`  
@@ -133,7 +230,7 @@ The system generates **interactive dashboards** that display:
 `Forecast Accuracy = Actual Calls / Forecasted Calls`  
 
 ---
-## 7. **Key DAX Measures**
+## 8. **Key DAX Measures**
 
 ### **Total Calls**
 
@@ -185,21 +282,7 @@ AVERAGE(CallCenter[CustomerSatisfaction])
 
 ---
 
-## 8. **Technologies Used**
-
-| Technology | Purpose |
-|-----------|--------|
-| Power BI | Dashboard development and visualization |
-| Python | Data cleaning and preprocessing |
-| Pandas / NumPy | Data manipulation |
-| Scikit-learn | Feature engineering |
-| SQL | Data querying |
-| Excel | Data preparation |
-| Tableau | Additional visualization |
-
----
-
-## 9. **Repository Structure**
+## 10. **Repository Structure**
 
 ```
 call-center-performance-dashboard
