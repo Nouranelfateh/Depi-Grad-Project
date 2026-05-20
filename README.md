@@ -11,7 +11,7 @@ This project transforms raw call center data into actionable insights by buildin
 **Tools Used:**
 
 * **SQL** – Querying and extracting data  
-* **Python (Pandas, NumPy, Scikit-learn)** – Data cleaning, preprocessing, feature engineering  
+* **Python (Pandas)** – Data cleaning    
 * **Excel** – Initial exploration and validation  
 * **Power BI** – Data modeling, DAX calculations, interactive dashboards  
 
@@ -66,8 +66,6 @@ flowchart LR
     B --> C[Excel Exploration]
     C --> D[Python Processing]
     D --> E[Data Cleaning]
-    D --> F[Feature Engineering]
-    D --> G[Scikit-learn Preprocessing]
     E --> H[Processed Dataset]
     F --> H
     G --> H
@@ -127,7 +125,6 @@ These visualizations allow decision makers to analyze **call center performance 
 The system performs several processing operations including:
 
 - Data cleaning and validation
-- Feature engineering
 - Aggregation of performance metrics
 - KPI calculations
 - Time-based performance analysis
@@ -147,7 +144,7 @@ The system generates **interactive dashboards** that display:
 ---
 ## 6.4 **Entity Relationship Diagram(ERD)**
 
-The dataset follows a **Star Schema data model** where fact tables store transactional data and dimension tables provide descriptive attributes for analysis.
+The dataset follows a **galaxy Schema data model** .
 
 ```mermaid
 erDiagram
@@ -294,7 +291,6 @@ data
 
 python
    data_cleaning.py
-   feature_engineering.py
 
 sql
    queries.sql
@@ -302,8 +298,6 @@ sql
 powerbi
    call_center_dashboard.pbix
 
-tableau
-   dashboard.twb
 
 README.md
 ```
